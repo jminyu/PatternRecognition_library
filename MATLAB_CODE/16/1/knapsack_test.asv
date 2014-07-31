@@ -1,0 +1,19 @@
+    clear all;
+    W = 30;  
+    wb=[12 3000; 15 4500; 10 2700; 20 6000; 17 5500; 13 4000];
+    %wb=[12 3000; 15 4500];
+    len_wb = length(wb);
+    Table = zeros(W+1, 1);
+   
+    for k=1:len_wb
+        %for w=W:-1:wb(k,1)
+        for w=wb(k,1):1:W
+           if Table(w-wb(k,1)+1) + wb(k,2) > Table(w+1)
+              Table(w+1) = Table(w-wb(k,1)+1) + wb(k,2);
+           end
+        end
+        Table
+    end
+
+    max_benefit = Table(W+1);
+    max_benefit
