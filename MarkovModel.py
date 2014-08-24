@@ -17,3 +17,4 @@ import random
 import cv2
 
 class MarkovModel:
+
